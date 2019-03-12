@@ -1,2 +1,2 @@
-nodejs/node_modules/*
-pnodejs/ackage-lock.json
+node_modules/*
+package-lock.json
