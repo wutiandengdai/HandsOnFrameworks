@@ -39,10 +39,10 @@
 }
 
 /* ------------------ */
-/* Artist List Styles */
+/* Agent List Styles */
 /* ------------------ */
 
-.artistlist {
+.agentlist {
   position: absolute;
   width: 100%;
   min-width:320px;
@@ -57,14 +57,14 @@
   padding: 0;
 }
 
-.artistlist-item {
+.agentlist-item {
   padding: 10px 10px 0 10px;
   border-bottom: 1px solid #999;
   opacity: .9;
   transition: all 0.3s ease-out;
 }
 
-.artistlist-item:hover {
+.agentlist-item:hover {
   cursor: pointer;
   background: #FDF6E3;
   opacity: 1;
@@ -74,6 +74,6 @@
   transform: scale(1.1);
 }
 
-.artistlist-item:last-child  {
+.agentlist-item:last-child  {
     border-bottom:none;
 }

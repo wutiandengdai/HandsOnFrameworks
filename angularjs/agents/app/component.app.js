@@ -11,29 +11,68 @@ System.register(["@angular/core"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var Agent, AppComponent, AGENTS;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
+            // Error prompt when export class appears after @Component
+            Agent = class Agent {
+            };
+            exports_1("Agent", Agent);
             AppComponent = class AppComponent {
+                constructor() {
+                    this.agents = AGENTS;
+                }
+                showAgent(item) {
+                    this.currentAgent = item;
+                }
             };
             AppComponent = __decorate([
                 core_1.Component({
                     selector: 'app',
+                    //`` for multiline value.
                     // template: `
                     //     <div class = "card search">
                     //     <h1 class="search-headline">Agents List</h1>
                     //     <label class="search-label">Search</label>
                     //     </div>
                     // `
-                    templateUrl: 'app/html/app.html'
+                    templateUrl: 'app/html/app.html',
+                    // styles: [".btn {background-color: green;}",
+                    //     ".btn:hover {background-color: gray;}"
+                    // ],
+                    styleUrls: [
+                        "./css/app.css"
+                    ]
                 }), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);
             exports_1("AppComponent", AppComponent);
+            AGENTS = [
+                { "name": "Barot Bellingham",
+                    "shortname": "Barot_Bellingham",
+                    "school": "Californio University",
+                    "bio": "Age 23, 4 years experience in real estate cases"
+                },
+                { "name": "Constance Smith",
+                    "shortname": "Constance_Smith",
+                    "school": "Masachusset Institute of University",
+                    "bio": "Age 42, more than ten years experience in public relationship"
+                },
+                { "name": "Hassum Harrod",
+                    "shortname": "Hassum_Harrod",
+                    "school": "Harvard University",
+                    "bio": "Age 25, newly graduate."
+                },
+                { "name": "Hillary Goldwynn",
+                    "shortname": "Hillary_Goldwynn",
+                    "school": "Hamburg University",
+                    "bio": "Age 37, 7 years experience in patent cases"
+                }
+            ];
         }
     }
 });

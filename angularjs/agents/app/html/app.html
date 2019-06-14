@@ -1,4 +1,57 @@
 <div class = "card search">
     <h1 class="search-headline">Agents List</h1>
-    <label class="search-label">Search</label>
+    <!-- Test whether the property/parameter exists-->
+    <label class="search-label">Search
+         <!-- Option 1: <span *ngIf="name">for {{name}}</span> -->
+         <!-- Option 2: <span *ngIf="name" bind-innerHTML = "' for: ' + name"></span> -->
+         <span *ngIf="query" [innerHTML] = "' for: ' + query"></span>
+    </label>
+
+    <div>
+        <!-- Inside of a tag, # is used to define parameter
+            An alternative :
+            reset value at keyup / click
+
+            <input class="search-input" #newAgentName (keyup.enter)="addAgent(newAgentName.value, 'dummy')"/> -->
+        <!-- <input class="search-input" 
+                #newAgentName
+                [value] = "name"
+                (input) = "name = $event.target.value"
+        /> -->
+
+        <!-- Use ngModel
+            <input class="search-input" 
+                #newAgentName
+                [(ngModel)] = "name"/>
+        <input class="search-input" #newAgentSchool/> -->
+
+        <input class="search-input"
+            [(ngModel)] = "query"
+            placeholder="Type in search term here"/>
+    </div>
+
+     <!-- <button class="btn" (click)="
+    addAgent(newAgentName.value, newAgentSchool.value);
+    newAgentName.value='';
+    newAgentSchool.value='';
+    ">Add</button> -->
 </div>
+
+<ul class='agentlist cf'
+    *ngIf = "query">
+    <!-- <li class='agentlist-item cf'
+        #agentsContainer
+        (click) = "onClick(item, agentsContainer)"
+        *ngFor="let item of agents">
+        <h2 class="agent-name">{{item.name}}</h2>
+        <h3 class='agent-info'>{{item.school}}</h3>
+    </li> -->
+
+    <li class='agentlist-item cf'
+        *ngFor="let item of agents"
+        (click) = "showAgent(item); query=''">
+        <agent-item class="content" [agent]=item></agent-item>
+    </li>
+</ul>
+
+<agent-detail *ngIf="currentAgent" [agent]="currentAgent"></agent-detail>
