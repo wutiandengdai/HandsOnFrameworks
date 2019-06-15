@@ -1,4 +1,4 @@
-System.register(["@angular/core", '@angular/platform-browser', '@angular/forms', './component.app', './components/agent-item', './components/agent-detail'], function(exports_1, context_1) {
+System.register(["@angular/core", '@angular/platform-browser', '@angular/forms', './component.app', './components/agent-item', './components/agent-detail', './filter.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["@angular/core", '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, component_app_1, agent_item_1, agent_detail_1;
+    var core_1, platform_browser_1, forms_1, component_app_1, agent_item_1, agent_detail_1, filter_pipe_1;
     var AppModule;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(["@angular/core", '@angular/platform-browser', '@angular/forms',
             },
             function (agent_detail_1_1) {
                 agent_detail_1 = agent_detail_1_1;
+            },
+            function (filter_pipe_1_1) {
+                filter_pipe_1 = filter_pipe_1_1;
             }],
         execute: function() {
             AppModule = class AppModule {
@@ -41,7 +44,7 @@ System.register(["@angular/core", '@angular/platform-browser', '@angular/forms',
                         platform_browser_1.BrowserModule, forms_1.FormsModule
                     ],
                     declarations: [
-                        component_app_1.AppComponent, agent_item_1.AgentItemComponent, agent_detail_1.AgentDetailComponent
+                        component_app_1.AppComponent, agent_item_1.AgentItemComponent, agent_detail_1.AgentDetailComponent, filter_pipe_1.FilterPipe
                     ],
                     bootstrap: [
                         component_app_1.AppComponent

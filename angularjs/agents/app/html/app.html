@@ -48,7 +48,7 @@
     </li> -->
 
     <li class='agentlist-item cf'
-        *ngFor="let item of agents"
+        *ngFor="let item of (agents | filter: query )"
         (click) = "showAgent(item); query=''">
         <agent-item class="content" [agent]=item></agent-item>
     </li>
