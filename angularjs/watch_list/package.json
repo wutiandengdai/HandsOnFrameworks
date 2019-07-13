@@ -1,0 +1,41 @@
+{
+  "name": "watch-list",
+  "version": "1.0.0",
+  "author": "Justin Schwartzenberger",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "@angular/common": "^8.0.3",
+    "@angular/compiler": "^8.0.2",
+    "@angular/core": "^8.0.2",
+    "@angular/forms": "^8.0.2",
+    "@angular/http": "^7.2.15",
+    "@angular/platform-browser": "^8.0.2",
+    "@angular/platform-browser-dynamic": "^8.0.2",
+    "@angular/router": "^8.0.2",
+    "core-js": "^3.1.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "systemjs": "^3.1.6",
+    "zone.js": "^0.9.1"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.2",
+    "@types/node": "^12.0.10",
+    "concurrently": "4.1.1",
+    "lite-server": "2.5.3",
+    "rimraf": "2.6.3",
+    "typescript": "3.5.2"
+  },
+  "scripts": {
+    "clean": "rimraf app/**/*.js app/**/*.js.map",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "prestart": "npm run clean",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+  }
+}
